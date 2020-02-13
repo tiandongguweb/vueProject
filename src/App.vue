@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" >
+    <div class="header">
+      <div class="logo">渡一教育</div>
+      <ul class="nav">
+        <router-link tag="li" to="/">首页</router-link>
+        <router-link tag="li" to="/class">课程学习</router-link>
+        <router-link tag="li" to="/studentsShow">学员展示</router-link>
+        <router-link tag="li" to="/aboutWe">关于</router-link>
+        <router-link tag="li" to="/community">社区</router-link>
+      </ul>
+    </div>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+<style scoped>
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 200px;
+  background-color: #38f;
+  line-height: 70px;
+  padding-bottom: 2px;
+  color: #fff;
 }
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.logo {
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.view {
+  padding: 50px 200px;
+}
+
+.exactActive {
+  font-weight: bold;
 }
 </style>
